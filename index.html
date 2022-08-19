@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather app</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="src/styles.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <form id="city-search">
+      <div class="input-group w-50">
+        <input type="text" id="city-input" placeholder="Enter city" class="form-control" />
+        <button type="submit" class="btn btn-warning" class="search-button">
+          Search
+        </button>
+        <button type="click" class="btn btn-primary" id="location-input">
+          Current location
+        </button>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-4">
+        <h2 id="city">Kyiv, Ukraine</h2>
+        <h3 id="date">Monday 10:55</h3>
+      </div>
+      <div class="col-3">
+        <h1><span id="temp">22°C</span>
+          <!-- <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a> -->
+        </h1>
+      </div>
+      <div class="col-4">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/803/original/sun-icon-31.png?1657277809"
+          alt="sun icon" class="sun" />
+      </div>
+    </div>
+    <div class="card-group">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Tuesday</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-muted"></small></p>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/803/original/sun-icon-31.png?1657277809"
+            alt="sun icon" width="200px" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Wednesday</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-muted"></small></p>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/804/original/252035.png?1657278764"
+            alt="cloud icon" width="200px" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Thursday</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-muted"></small></p>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/804/original/252035.png?1657278764"
+            alt="cloud icon" width="200px" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Friday</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-muted"></small></p>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/804/original/252035.png?1657278764"
+            alt="cloud icon" width="200px" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Saturday</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-muted"></small></p>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/803/original/sun-icon-31.png?1657277809"
+            alt="sun icon" width="200px" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="src/index.js"></script>
+
+</html>
