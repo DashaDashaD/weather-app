@@ -21,22 +21,24 @@
     <div class="weather-app-wrapper">
       <div class="weather-app">
         <form id="city-search">
-          <div class="input-group w-30">
+          <div class="input-group mb-3">
             <input type="text" id="city-input" placeholder="Enter city" class="form-control" />
-            <button type="submit" class="btn btn-warning" class="search-button">
-              Search
-            </button>
-            <button type="click" class="btn btn-primary" id="location-input">
-              Current location
-            </button>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-warning" class="search-button">
+                Search
+              </button>
+              <button type="click" class="btn btn-primary" id="location-input">
+                Current location
+              </button>
+            </div>
           </div>
         </form>
-        <div class="row">
+        <div class="row card-group">
           <div class="col-4">
             <h2 id="city">Kyiv, Ukraine</h2>
             <h3 id="date">Monday 10:55</h3>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <h1><span id="temp">22°C</span>
               <!-- <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a> -->
             </h1>
