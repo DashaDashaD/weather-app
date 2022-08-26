@@ -70,3 +70,7 @@ li {
   left: 80px;
   top: -50px;
 }
+
+#description {
+  text-transform: capitalize;
+}
