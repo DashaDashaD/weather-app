@@ -1,28 +1,28 @@
-// Time & date
-let now = new Date()
+function formatDate(now) {
+  let days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ]
+  let day = days[now.getUTCDay()]
 
-let days = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-]
-let day = days[now.getUTCDay()]
-
-let hour = now.getHours()
-if (hour < 10) {
-  hour = '0' + hour
-}
-let minute = now.getMinutes()
-if (minute < 10) {
-  minute = '0' + minute
+  let hour = now.getHours()
+  if (hour < 10) {
+    hour = '0' + hour
+  }
+  let minute = now.getMinutes()
+  if (minute < 10) {
+    minute = '0' + minute
+  }
+  return `${day}, ${hour}:${minute}`
 }
 
 let h3 = document.querySelector('#date')
-h3.innerHTML = `${day}, ${hour}:${minute}`
+h3.innerHTML = formatDate(new Date())
 
 function showWeather(response) {
   let h2 = document.querySelector('#city')
