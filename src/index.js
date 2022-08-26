@@ -30,6 +30,9 @@ function showWeather(response) {
   let h1 = document.querySelector('h1')
   let temperature = Math.round(response.data.main.temp)
   h1.innerHTML = `${temperature}°C`
+
+  let descriptionElement = document.querySelector('#description')
+  descriptionElement.innerHTML = response.data.weather[0].description
 }
 
 function getWeatherbyCity(city) {
