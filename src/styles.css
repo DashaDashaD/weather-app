@@ -11,23 +11,30 @@ h1 {
   line-height: 48px;
   position: relative;
   top: 60px;
+  color: black;
 }
 .sun {
   left: 50px;
-  top: 70px;
+  top: 30px;
   width: 200px;
   padding: 30px;
 }
-h2,
-h3 {
+#city,
+#date {
   text-align: center;
   font-weight: 500;
-  margin: 0;
   font-size: 30px;
   line-height: 48px;
+  font-weight: 500;
+  position: relative;
+  top: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: white;
 }
+
 .card-group {
-  margin: 30px;
+  margin: 10px;
   padding: 0 auto;
   text-align: center;
 }
@@ -40,8 +47,8 @@ footer {
 .weather-app-wrapper {
   max-width: 800px;
   margin: 30px auto;
-  background-color: #f9f7fe;
-  box-shadow: 5px 30px 50px rgb(0 0 0 / 10%);
+  background-color: #9cbee7;
+  box-shadow: 5px 30px 50px rgb(0 0 0 / 20%);
   border-radius: 14px;
   color: rgb(81, 78, 78);
 }
@@ -49,28 +56,53 @@ footer {
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 14px;
 }
 ul {
-  margin: 0;
+  margin: 10px;
   padding: 0;
   position: relative;
-  top: 60px;
 }
 
 li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: rgb(135, 135, 135);
-  font-size: 16px;
-  font-weight: 100;
-  line-height: 19px;
+  display: inline-flex;
+  line-height: 2.5em;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: white;
+  vertical-align: center;
   position: relative;
-  left: 80px;
-  top: -80px;
+  padding: 1px;
+  margin: 2px;
 }
 
 #description {
   text-transform: capitalize;
+}
+
+#temperature-block {
+  color: black;
+  font-size: 55px;
+  position: relative;
+  font-weight: 500;
+  line-height: 2;
+  padding: 30px 10px;
+}
+
+#celsius-link,
+#fahrenheit-link,
+#border {
+  color: black;
+  cursor: default;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  top: -30px;
+}
+
+#celsius-link:hover,
+#fahrenheit-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
