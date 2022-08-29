@@ -80,7 +80,7 @@ li {
   text-transform: capitalize;
 }
 
-#temperature-block {
+.temperature-block {
   color: black;
   font-size: 55px;
   position: relative;
@@ -93,16 +93,18 @@ li {
 #fahrenheit-link,
 #border {
   color: black;
-  cursor: default;
   font-size: 25px;
-  text-decoration: none;
   color: black;
   position: relative;
   top: -30px;
 }
 
-#celsius-link:hover,
-#fahrenheit-link:hover {
+.inactive {
+  text-decoration: none;
+  cursor: default;
+}
+
+.active {
   text-decoration: underline;
   cursor: pointer;
 }
