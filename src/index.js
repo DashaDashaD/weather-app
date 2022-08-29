@@ -27,9 +27,9 @@ h3.innerHTML = formatDate(new Date())
 function showWeather(response) {
   let h2 = document.querySelector('#city')
   h2.innerHTML = response.data.name
-  let h1 = document.querySelector('h1')
-  let temperature = Math.round(response.data.main.temp)
-  h1.innerHTML = `${temperature}°C`
+  let temperatureElement = document.querySelector('#temp')
+  celsiusTemperature = Math.round(response.data.main.temp)
+  temperatureElement.innerHTML = Math.round(celsiusTemperature)
 
   let descriptionElement = document.querySelector('#description')
   descriptionElement.innerHTML = response.data.weather[0].description
@@ -61,7 +61,6 @@ function showUserCity(event) {
 let searchForm = document.querySelector('#city-search')
 searchForm.addEventListener('submit', showUserCity)
 
-// Get weather by current location
 function getWeatherbyLocation(position) {
   let apiKey = '5f472b7acba333cd8a035ea85a0d4d4c'
   let lat = position.coords.latitude
@@ -77,10 +76,22 @@ function showWeatherByCurrentPosition(event) {
 let currentLocationButton = document.querySelector('#location-input')
 currentLocationButton.addEventListener('click', showWeatherByCurrentPosition)
 
-// function ShowFahrenheit(event) {
-//   let h1 = document.querySelector('#temp')
-//   h1.innerHTML = 28 * 1.8 + 32
-// }
+function ShowCelcius(event) {
+  event.preventDefault()
+  let temperatureElement = document.querySelector('#temp')
+  temperatureElement.innerHTML = Math.round(celsiusTemperature)
+}
+function ShowFahrenheit(event) {
+  event.preventDefault()
+  let temperatureElement = document.querySelector('#temp')
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32)
+}
 
-// let searchFahrenheit = document.querySelector('#fahrenheit-link')
-// searchFahrenheit.addEventListener('click', ShowFahrenheit)
+let searchFahrenheit = document.querySelector('#fahrenheit-link')
+searchFahrenheit.addEventListener('click', ShowFahrenheit)
+
+let searchCelcius = document.querySelector('#celsius-link')
+searchCelcius.addEventListener('click', ShowCelcius)
+
+let celsiusTemperature = null
+getWeatherbyCity('Kyiv')
