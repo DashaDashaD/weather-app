@@ -78,20 +78,24 @@ currentLocationButton.addEventListener('click', showWeatherByCurrentPosition)
 
 function ShowCelcius(event) {
   event.preventDefault()
+  CelciusLink.classList.replace('active', 'inactive')
+  FahrenheitLink.classList.replace('inactive', 'active')
   let temperatureElement = document.querySelector('#temp')
   temperatureElement.innerHTML = Math.round(celsiusTemperature)
 }
 function ShowFahrenheit(event) {
   event.preventDefault()
+  FahrenheitLink.classList.replace('active', 'inactive')
+  CelciusLink.classList.replace('inactive', 'active')
   let temperatureElement = document.querySelector('#temp')
   temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32)
 }
 
-let searchFahrenheit = document.querySelector('#fahrenheit-link')
-searchFahrenheit.addEventListener('click', ShowFahrenheit)
+let FahrenheitLink = document.querySelector('#fahrenheit-link')
+FahrenheitLink.addEventListener('click', ShowFahrenheit)
 
-let searchCelcius = document.querySelector('#celsius-link')
-searchCelcius.addEventListener('click', ShowCelcius)
+let CelciusLink = document.querySelector('#celsius-link')
+CelciusLink.addEventListener('click', ShowCelcius)
 
 let celsiusTemperature = null
 getWeatherbyCity('Kyiv')
