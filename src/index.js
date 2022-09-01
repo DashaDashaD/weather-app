@@ -21,6 +21,33 @@ function formatDate(now) {
   return `${day}, ${hour}:${minute}`
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector('#forecast')
+  let days = ['Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue']
+
+  let forecastHTML = ``
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card">
+            <div class="card-body">
+              <h6 class="card-title">${day}</h5>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted"></small></p>
+                <img
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/803/original/sun-icon-31.png?1657277809"
+                  alt="sun icon" width="100px" />
+                <div class="weather-forecast-temperature">
+                  <span class="weather-forecast-temperature-max">18°</span>
+                  <span class="weather-forecast-temperature-min">12°</span>
+                </div>
+            </div>
+          </div>
+    `
+  })
+
+  forecastElement.innerHTML = forecastHTML
+}
 let h3 = document.querySelector('#date')
 h3.innerHTML = formatDate(new Date())
 
@@ -99,3 +126,4 @@ CelciusLink.addEventListener('click', ShowCelcius)
 
 let celsiusTemperature = null
 getWeatherbyCity('Kyiv')
+showForecast()
