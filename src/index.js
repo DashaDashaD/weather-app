@@ -21,7 +21,7 @@ function formatDate(now) {
   return `${day}, ${hour}:${minute}`
 }
 
-function showForecast() {
+function showForecast(response) {
   let forecastElement = document.querySelector('#forecast')
   let days = ['Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue']
 
@@ -51,6 +51,12 @@ function showForecast() {
 let h3 = document.querySelector('#date')
 h3.innerHTML = formatDate(new Date())
 
+function getForecast(coordinates) {
+  let apiKey = '9e507037a8dea5e5af384f53a942ea01'
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+  axios.get(apiUrl).then(showForecast)
+}
+
 function showWeather(response) {
   let h2 = document.querySelector('#city')
   h2.innerHTML = response.data.name
@@ -70,10 +76,12 @@ function showWeather(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
   )
   iconElement.setAttribute('alt', response.data.weather[0].description)
+
+  getForecast(response.data.coord)
 }
 
 function getWeatherbyCity(city) {
-  let apiKey = '5f472b7acba333cd8a035ea85a0d4d4c'
+  let apiKey = '9e507037a8dea5e5af384f53a942ea01'
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
   axios.get(url).then(showWeather)
 }
@@ -126,4 +134,3 @@ CelciusLink.addEventListener('click', ShowCelcius)
 
 let celsiusTemperature = null
 getWeatherbyCity('Kyiv')
-showForecast()
