@@ -39,10 +39,9 @@ function formatDay(timestamp) {
 function showForecast(response) {
   let forecast = response.data.daily
   let forecastElement = document.querySelector('#forecast')
-
   let forecastHTML = ``
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
         `<div class="card">
