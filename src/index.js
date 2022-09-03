@@ -24,15 +24,7 @@ function formatDate(now) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000)
   let day = date.getDay()
-  let days = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ]
+  let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   return days[day]
 }
 
@@ -46,7 +38,7 @@ function showForecast(response) {
         forecastHTML +
         `<div class="card">
             <div class="card-body">
-              <h6 class="card-title">${formatDay(forecastDay.dt)}</h5>
+              <h6 class="card-title">${formatDay(forecastDay.dt)}</h6>
                 <p class="card-text"></p>
                 <p class="card-text"><small class="text-muted"></small></p>
                 <img
