@@ -47,7 +47,7 @@ footer {
 .weather-app-wrapper {
   max-width: 800px;
   margin: 30px auto;
-  background-color: #9cbee7;
+  background-color: rgb(254, 184, 196);
   box-shadow: 5px 30px 50px rgb(0 0 0 / 20%);
   border-radius: 14px;
   color: rgb(81, 78, 78);
@@ -74,6 +74,8 @@ li {
   position: relative;
   padding: 1px;
   margin: 2px;
+  color: rgb(84, 100, 190);
+  font-weight: 500;
 }
 
 #description {
@@ -114,5 +116,19 @@ li {
   text-align: center;
 }
 .weather-forecast-temperature-min {
-  opacity: 0.5;
+  opacity: 0.6;
+  color: rgb(84, 100, 190);
+}
+body {
+  background-image: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/314/original/minimalist-nawpic-7.jpg?1662205798');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 1;
+}
+#location-input {
+  background-color: rgb(56, 90, 185);
+}
+#search-input {
+  background-color: #e16bb8;
 }
